@@ -1,0 +1,24 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stok/Katalog</title><link rel="stylesheet" href="css/style.css"></head>
+<body onload="requireAuth(); renderKatalog();">
+<div class="container">
+  <div class="card">
+    <h1>Informasi Stok / Katalog</h1>
+    <table id="tblKatalog"><thead>
+      <tr><th>ISBN</th><th>Judul</th><th>Pengarang</th><th>Harga</th><th>Stok</th></tr>
+    </thead><tbody></tbody></table>
+    <h2>Tambah Stok Baru</h2>
+    <div class="grid grid-3">
+      <div><label>ISBN</label><input id="isbn"></div>
+      <div><label>Judul</label><input id="judul"></div>
+      <div><label>Pengarang</label><input id="penulis"></div>
+      <div><label>Harga</label><input id="harga" type="number" min="0"></div>
+      <div><label>Stok</label><input id="stok" type="number" min="0"></div>
+    </div>
+    <button class="btn btn-ok" onclick="addStockRow()">Tambah</button>
+  </div>
+  <div class="footer"><a class="btn" href="dashboard.html">Kembali</a></div>
+</div>
+<script src="js/data.js"></script><script src="js/script.js"></script>
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head><body><div class="container">
+
+<div class="card" style="max-width:520px;margin:40px auto">
+  <h1>Masuk</h1>
+  <form onsubmit="event.preventDefault(); try{loginAccount(email.value,password.value); location.href='dashboard.html';}catch(e){alert(e.message);}">
+    <label>Email</label><input id="email" type="email" required>
+    <label>Password</label><input id="password" type="password" required minlength="6">
+    <div>
+      <button class="btn btn-accent" type="submit">Login</button>
+      <button class="btn" type="button" onclick="document.getElementById('reg').classList.add('show')">Daftar</button>
+    </div>
+  </form>
+</div>
+
+<!-- Modal daftar -->
+<div id="reg" class="modal" onclick="if(event.target.classList.contains('modal')) this.classList.remove('show')">
+  <div class="modal-content">
+    <h2>Daftar Akun</h2>
+    <div class="grid grid-2">
+      <div><label>Nama</label><input id="rname"></div>
+      <div><label>Email</label><input id="remail" type="email"></div>
+      <div><label>Password</label><input id="rpass" type="password"></div>
+      <div><label>Konfirmasi</label><input id="rpass2" type="password"></div>
+    </div>
+    <div style="margin-top:8px">
+      <button class="btn btn-accent" onclick="if(rpass.value!==rpass2.value){alert('Password tidak sama');return;} try{registerAccount({name:rname.value,email:remail.value,password:rpass.value}); alert('Akun dibuat. Silakan login.'); document.getElementById('reg').classList.remove('show');}catch(e){alert(e.message);}">Daftar</button>
+      <button class="btn" onclick="document.getElementById('reg').classList.remove('show')">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Front-end only • data tersimpan di localStorage</div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body></html>

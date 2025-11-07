@@ -1,0 +1,17 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracking</title><link rel="stylesheet" href="css/style.css"></head>
+<body onload="requireAuth()">
+<div class="container">
+  <div class="card">
+    <h1>Tracking Pengiriman</h1>
+    <div class="grid grid-3">
+      <div><label>Nomor Delivery Order</label><input id="doInput" placeholder="DO-123"></div>
+      <div style="align-self:end"><button class="btn btn-accent" onclick="searchDO()">Cari</button></div>
+    </div>
+    <div id="trackResult" style="margin-top:12px"></div>
+  </div>
+  <div class="footer"><a class="btn" href="dashboard.html">Kembali</a></div>
+</div>
+<script src="js/data.js"></script><script src="js/script.js"></script>
+</body></html>

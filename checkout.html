@@ -1,0 +1,39 @@
+<!doctype html><html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout</title><link rel="stylesheet" href="css/style.css"></head>
+<body onload="requireAuth(); initCheckout(); renderCart();">
+<div class="container">
+  <div class="card">
+    <h1>Halaman Pemesanan</h1>
+    <div class="grid grid-2">
+      <div>
+        <h2>Keranjang</h2>
+        <div class="grid grid-3">
+          <div><label>ISBN</label><select id="cartIsbn"></select></div>
+          <div><label>Qty</label><input id="cartQty" type="number" min="1" value="1"></div>
+          <div style="align-self:end"><button class="btn btn-ok" onclick="addToCart()">Tambah</button></div>
+        </div>
+        <table id="tblCart"><thead>
+          <tr><th>ISBN</th><th>Judul</th><th>Qty</th><th>Harga</th><th>Total</th><th>Aksi</th></tr>
+        </thead><tbody></tbody></table>
+        <div><b>Grand Total: Rp <span id="grandTotal">0</span></b></div>
+      </div>
+      <div>
+        <h2>Data Pemesan & Pembayaran</h2>
+        <form onsubmit="submitOrder(event)">
+          <label>Nama</label><input id="nama" required>
+          <label>Email</label><input id="emailOrder" type="email" required>
+          <label>Alamat</label><textarea id="alamat" required></textarea>
+          <label>Metode Pembayaran</label>
+          <select id="bayar" required>
+            <option value="">Pilih...</option><option>Transfer Bank</option><option>VA</option><option>COD</option>
+          </select>
+          <button class="btn btn-accent" type="submit">Kirim Pesanan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><a class="btn" href="dashboard.html">Kembali</a></div>
+</div>
+<script src="js/data.js"></script><script src="js/script.js"></script>
+</body></html>
